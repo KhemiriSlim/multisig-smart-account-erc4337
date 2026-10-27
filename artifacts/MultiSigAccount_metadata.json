@@ -28,7 +28,37 @@
 			},
 			{
 				"inputs": [],
+				"name": "CallFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidRequired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LengthMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "NotEntryPoint",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotExecuter",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotSelf",
 				"type": "error"
 			},
 			{
@@ -57,6 +87,78 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_removedOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_required",
+						"type": "uint256"
+					}
+				],
+				"name": "RequirementChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "addDeposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "addOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_required",
+						"type": "uint256"
+					}
+				],
+				"name": "changeRequirement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "entryPoint",
 				"outputs": [
@@ -64,6 +166,91 @@
 						"internalType": "contract IEntryPoint",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "execute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "datas",
+						"type": "bytes[]"
+					}
+				],
+				"name": "executeBatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDeposit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwners",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -105,6 +292,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "removeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -309,11 +509,11 @@
 			]
 		},
 		"MultiSigAccount.sol": {
-			"keccak256": "0xc5d539328818b76c3d3c68aafb6089f366b216f699fbc481619685104f7604db",
+			"keccak256": "0x94292d6b78d29b71175b3b2d34606de9999bbbd5b1175abe6d8b7a1f24f1cf89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://47868b9835b00ff783450c1049dfdf9c532adb8bf5537c54146d527f4920205e",
-				"dweb:/ipfs/QmU3QRpj12a4irNkWUATueDmoVfriRezHXeSweyNfk64tG"
+				"bzz-raw://11f325fdf4447a096e5826a10c7fff3e8a084c66ebc88c9c7abd254929eebd86",
+				"dweb:/ipfs/QmNxSMFxUBR1QnSWABBvuD23iSWiCDjJj4VKuSYPgEvABR"
 			]
 		},
 		"https://github.com/eth-infinitism/account-abstraction/blob/v0.7.0/contracts/interfaces/IAccount.sol": {
