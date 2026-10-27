@@ -309,11 +309,11 @@
 			]
 		},
 		"MultiSigAccount.sol": {
-			"keccak256": "0x39bdc9391267149aa9a8eae13a777654f53f084bf364dd52b2d615253f34c011",
+			"keccak256": "0xc5d539328818b76c3d3c68aafb6089f366b216f699fbc481619685104f7604db",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e73aa98ba61c5b8b63c37660e0e42cfd58567fa6a57cc4d46ba638a70bde82f",
-				"dweb:/ipfs/QmQKP9YWGb4uj6cfoNgt4fMndHfjxP2pBixXeDmDk1zHtj"
+				"bzz-raw://47868b9835b00ff783450c1049dfdf9c532adb8bf5537c54146d527f4920205e",
+				"dweb:/ipfs/QmU3QRpj12a4irNkWUATueDmoVfriRezHXeSweyNfk64tG"
 			]
 		},
 		"https://github.com/eth-infinitism/account-abstraction/blob/v0.7.0/contracts/interfaces/IAccount.sol": {

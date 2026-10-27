@@ -57,12 +57,16 @@ contract MultiSigAccount is IAccount{
             return 1;
         }
         bytes32 digest = userOpHash.toEthSignedMessageHash();
+        address lastSigner = address(0);
+
         for(uint256 i = 0 ; i < required ; i++){
-
+            (address signer,ECDSA.RecoverError err,) = ECDSA.tryRecover(digest,signature[i* 65 : ( i + 1 ) * 65]);
+            if(err != ECDSA.RecoverError.NoError || !isOwner[signer] || signer <= lastSigner){
+                return 1;
+            }
+            lastSigner = signer;
         }
-
-
         return 0;
-    }
+    }   
 
 }
